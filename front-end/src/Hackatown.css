@@ -2,14 +2,23 @@
     text-align:center;
 }
 
-.navBar{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+.HeaderBar{
+    position: sticky;
+	top: 0;
+	margin-left:auto; 
+	margin-right:auto;
+	background-color:white;
+	display: flex;
+    border-bottom: 1px solid rgba(107, 104, 104, 0.534);
+    z-index: 10;
+    font-family: "Montserrat";
 }
 
+.mainBody{
+	margin:0;
+	background-color: white;
+	position: relative;
+}
 #welcomeMsg {
     text-align: center;
 }
