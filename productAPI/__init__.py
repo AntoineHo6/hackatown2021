@@ -1,7 +1,7 @@
 from flask import Flask
 from arango import ArangoClient
 from arango_orm import Database
-from models import Products
+from models import Products, Categories
 
 flask_app = Flask(__name__)
 
@@ -19,4 +19,4 @@ if not sys_db.has_database('hackatown'):
 db_client = client.db('hackatown', username='root', password='securepassword')
 db = Database(db_client)
 
-db.create_all([Products])
+db.create_all([Products, Categories])
