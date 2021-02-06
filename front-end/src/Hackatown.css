@@ -23,13 +23,16 @@
 
 .mainBody{
 	margin:0;
-	background-color: white;
+	background-image: url("bg7.jpeg");
 	position: relative;
 }
 #welcomeMsg {
     text-align: center;
+    font-family: "Montserrat";
+    
 }
 
+<<<<<<< Updated upstream
 #BurgerMenuSidebar
 {
   display: block;
@@ -156,3 +159,47 @@
 {
   transform: none;
 }
+=======
+.listOfCategories{
+    padding-left:225px;
+    padding-right:100px;
+}
+
+.aCategorie{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border-color:white;
+    border-width: 10px;
+    border-style: solid;
+    background: white
+}
+
+.circleContainer{
+    position: relative;
+    width: 50%;
+    max-width: 300px;
+}
+
+/* .overlay{
+    position: absolute; 
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); 
+    color: #f1f1f1; 
+    
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    
+    text-align: center;  
+} */
+
+/* .circleContainer:hover .overlay{
+    opacity:1;
+} */
+>>>>>>> Stashed changes
