@@ -16,6 +16,8 @@ services:
             - ./productAPI:/usr/src/app
         ports:
             - 8393:8393
+        depends_on:
+            - hackatown-database
 
     hackatown-webserver:
         image: nginx
