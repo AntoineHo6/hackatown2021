@@ -3,6 +3,10 @@ p {
   font-family: "Montserrat";
 }
 
+h4 {
+  font-family: "Montserrat";
+}
+
 .HeaderBar{
     position: sticky;
 	top: 0;
