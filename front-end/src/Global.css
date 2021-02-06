@@ -1,4 +1,8 @@
 
+p {
+  font-family: "Montserrat";
+}
+
 .HeaderBar{
     position: sticky;
 	top: 0;

@@ -1,0 +1,16 @@
+
+#storeHeader {
+    font-size: 5em;
+    text-align: center;
+}
+
+#storeSubHeader {
+    font-size: 2em;
+    text-align: center;
+}
+
+#storeDescription {
+    font-size: 1.2em;
+    margin-left: 6em;
+    margin-right: 6em;
+}
