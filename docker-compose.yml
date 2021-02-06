@@ -18,7 +18,10 @@ services:
             - 8393:8393
 
     hackatown-webserver:
-        build: ./website
+        image: nginx
+        volumes:
+            - ./website/www:/var/www
+            - ./website/conf.d:/etc/nginx/conf.d
         ports:
             - 8080:80
 #       depends_on:
