@@ -23,11 +23,34 @@
 
 .mainBody{
 	margin:0;
-	background-color: white;
+	background-image: url("bg7.jpeg");
 	position: relative;
 }
 #welcomeMsg {
     text-align: center;
+    font-family: "Montserrat";
+    
+}
+
+.listOfCategories{
+    padding-left:225px;
+    padding-right:100px;
+}
+
+.aCategorie{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border-color:white;
+    border-width: 10px;
+    border-style: solid;
+    background: white
+}
+
+.circleContainer{
+    position: relative;
+    width: 50%;
+    max-width: 300px;
 }
 
 #BurgerMenuSidebar
