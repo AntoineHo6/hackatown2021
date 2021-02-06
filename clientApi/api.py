@@ -21,11 +21,25 @@ def list_clients():
 @flask_app.route('/clients/add', methods=['POST'])
 def add_new_client():
     body = json.loads(request.data)
+
     name = body.get('name',None)
+    username = body.get('username',None)
+    password = body.get('password',None)
+    courriel = body.get('courriel',None)
+
     if name is None:
         return jsonify({'error':'name cannot be null'})
-    new_clients = Clients(name=name)
-    #ajouter des attr
+
+    if username is None:
+        return jsonify({'error':'username cannot be null'})
+
+    if password is None:
+        return jsonify({'error':'password cannot be null'})
+
+    if courriel is None:
+        return jsonify({'error':'courriel cannot be null'})
+
+    new_clients = Clients(name=name, username=username, password=password, courriel=courriel)
     db.add(new_client)
     return jsonify({'result':new_client._dump()})
 
@@ -39,13 +53,28 @@ def edit_client():
         return jsonify({'error':'key cannot be null'})
 
     name = body.get('name',None)
-    #ajouter des attr
+    username = body.get('username',None)
+    password = body.get('password',None)
+    courriel = body.get('courriel',None)
+
     if name is None:
         return jsonify({'error':'name cannot be null'})
 
+    if username is None:
+        return jsonify({'error':'username cannot be null'})
+
+    if password is None:
+        return jsonify({'error':'password cannot be null'})
+
+    if courriel is None:
+        return jsonify({'error':'courriel cannot be null'})
+
     client = db.query(Clients).by_key(key)
     client.name = name
-    #ajouter des attr
+    client.username = username
+    client.password = password
+    client.courriel = courriel
+
     db.update(client)
 
     return jsonify({'result':client._dump()})
