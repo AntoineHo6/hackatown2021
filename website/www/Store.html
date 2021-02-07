@@ -33,17 +33,21 @@
         <p id="ourProducts"> Nos produits: </p>
 
         <div class="cardsContainer">
-            <div class="card">
-                <img src="./media/dannyBoy.JPEG" alt="produit" class="productCardImg">
-                <div class="cardDescContainer">
-                    <h4><b>Sirop d'érable</b></h4> 
-                </div>
-            </div>
-            <div class="card">
-                <img src="./media/dannyBoy.JPEG" alt="produit" class="productCardImg">
-                <div class="cardDescContainer">
-                    <h4><b>Sirop d'érable</b></h4> 
-                </div>
+            <!-- cards are added in js -->
+        </div>
+
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="modalProductName">Modal Header</h2>
+              </div>
+              <div class="modal-body">
+                <img src="" alt="image produit" id="modalProductImage"/>
+                <p id="modalProductDescription">product description</p>
+                <p id="modalProductPrice"><b>price</b></p>
+              </div>
             </div>
         </div>
     </body>
