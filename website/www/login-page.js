@@ -8,6 +8,7 @@ loginButton.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     if (username === "user" && password === "web_dev") {
+        localStorage.setItem("isLogged", "1");
         window.location.replace("./index.html");
     } else {
         loginErrorMsg.style.opacity = 1;
