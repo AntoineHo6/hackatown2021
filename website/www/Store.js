@@ -1,14 +1,46 @@
-fetch("http://localhost:8393/products/list").then(function(response) {
-    console.log(response.json());
-    return response.json();
-  }).then(function(data) {
-    console.log("am before boo");
-  }).catch(function() {
-      // CODE HERE KHA
-    for (let index = 0; index < array.length; index++) {
-        createCard(cardsContainer, "sirop d'érable", "./media/dannyBoy.JPEG", "description", "12$");
+function reqListener () {
+    // console.log(this.responseText);
+
+    var obj = JSON.parse(this.responseText);
+    
+    console.log(obj);
+    console.log(obj.result.length);
+
+    for (let i = 0; i < obj.result.length; i++) {
+        createCard(cardsContainer, obj.result[i].name, "./media/dannyBoy.JPEG", obj.result[i].description, "12$");
     }
-  });
+  }
+
+  var oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", reqListener);
+  oReq.open("GET", "http://localhost:8393/products/list");
+  oReq.send();
+
+
+
+
+
+// fetch("http://localhost:8393/products/list").then(function (response) {
+//     console.log(response.json());
+// }).then(function(data) {
+//     console.log(data);
+// }).catch(function () {
+
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Get the modal
 var modal = document.getElementById("myModal");
