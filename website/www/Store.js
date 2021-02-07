@@ -1,4 +1,5 @@
 fetch("http://localhost:8393/products/list").then(function(response) {
+    console.log(response.json());
     return response.json();
   }).then(function(data) {
     console.log(data);
@@ -55,5 +56,5 @@ function createCard(cardsContainer, name, imgSrc, description, price) {
 
 var cardsContainer = document.getElementsByClassName("cardsContainer")[0];
 for (let index = 0; index < 20; index++) {
-    createCard(cardsContainer, "sirop d'érable", "./media/dannyBoy.JPEG", "Ce sirop d’érable est produit avec la sève d’érable récoltée généralement au tout début de la saison des sucres. On le reconnaît à sa couleur légèrement dorée et à sa saveur aussi douce que délicate. Un vrai délice sur le yogourt et la crème glacée.", "12$");
+    createCard(cardsContainer, "sirop d'érable", "./media/dannyBoy.JPEG", "description", "12$");
 }

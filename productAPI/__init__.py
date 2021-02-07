@@ -1,10 +1,11 @@
 from flask import Flask
+from flask_cors import CORS
 from arango import ArangoClient
 from arango_orm import Database
 from models import Products, Categories, Shops, Product_Graph
 
 flask_app = Flask(__name__)
-
+CORS(flask_app)
 
 client = ArangoClient(hosts='http://hackatown-database:8529')
 
