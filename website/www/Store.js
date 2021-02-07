@@ -2,9 +2,11 @@ fetch("http://localhost:8393/products/list").then(function(response) {
     console.log(response.json());
     return response.json();
   }).then(function(data) {
-    console.log(data);
+    console.log("am before boo");
   }).catch(function() {
-    console.log("Booo");
+    for (let index = 0; index < array.length; index++) {
+        createCard(cardsContainer, "sirop d'érable", "./media/dannyBoy.JPEG", "description", "12$");
+    }
   });
 
 // Get the modal
@@ -55,6 +57,6 @@ function createCard(cardsContainer, name, imgSrc, description, price) {
 }
 
 var cardsContainer = document.getElementsByClassName("cardsContainer")[0];
-for (let index = 0; index < 20; index++) {
-    createCard(cardsContainer, "sirop d'érable", "./media/dannyBoy.JPEG", "description", "12$");
-}
+// for (let index = 0; index < 20; index++) {
+//     createCard(cardsContainer, "sirop d'érable", "./media/dannyBoy.JPEG", "description", "12$");
+// }
