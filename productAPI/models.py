@@ -25,9 +25,9 @@ class Categories(Collection):
 
     def __str__(self):
         return "<Subject({})>".format(self.name)
+ 
 
-
-#TODO seperate this into another api
+#TODO seperate this into another api?
 class Shops(Collection):
     __collection__ = 'shops'
 
@@ -41,3 +41,18 @@ class Shops(Collection):
 
     def __str__(self):
         return "<Subject({})>".format(self.name)
+
+class Category_Relation(Relation):
+    __collection__ = 'category_relation'
+    _key = String(required=True)
+
+class Shop_Relation(Relation):
+    __collection__ = 'shop_relation'
+    _key = String(required=True)
+
+class Product_Graph(Graph):
+    __graph__ = 'product_graph'
+    graph_connections = [
+            GraphConnection(Products, Shop_Relation, Shops),
+            GraphConnection(Categories, Category_Relation, Products)
+    ]
