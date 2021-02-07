@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Project Website</title> 
+    <link rel="stylesheet" type="text/css" href="Index.css">
     <link rel="stylesheet" type="text/css" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
@@ -11,26 +12,14 @@
     <nav class="HeaderBar">
         
         <div id="BurgerMenuSidebar">
-            <!--
-            A fake / hidden checkbox is used as click reciever,
-            so you can use the :checked selector on it.
-            -->
+            
             <input type="checkbox" />
             
-            <!--
-            Some spans to act as a hamburger.
             
-            They are acting like a real hamburger,
-            not that McDonalds stuff.
-            -->
             <span></span>
             <span></span>
             <span></span>
-            
-            <!--
-            Too bad the menu has to be inside of the button
-            but hey, it's pure CSS magic.
-            -->
+           
             <ul id="menu">
               <a href="#"><li>Page d'accueil</li></a>
               <a href="#"><li>Categorie</li></a>
@@ -50,20 +39,20 @@
         
     </nav>
 
-    <p><h1 id="welcomeMsg">Bienvenue à la Maison du Lys!</h1></p>
+    <p><h1 id="welcomeMsg">Bienvenue au Panier du Lys!</h1></p>
     <p id="welcomeMsg">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
     <p><h2 id="welcomeMsg">Choisissez une categorie pour explorer nos commerces locaux!</h2></p>
 
     <div class="listOfCategories">
         <!-- add table later for more circles + hover effects -->
-        <table>
+        <table style="margin:auto;">
             <tr>
                 <td>
                     <div class="circleContainer">
                         <img src="food.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 1
+                                JÉA
                             </div>
                         </div>
                        
@@ -74,17 +63,17 @@
                         <img src="clothes.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 2
+                                Multi-Clos
                             </div>
                         </div>
                     </div>
                 </td>
                 <td>
                     <div class="circleContainer">
-                        <img src="coffee.jpg" id="aCategorie">
+                        <img src="pottery.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 3
+                                Atelier de Potterie à Sara
                             </div>
                         </div>
                     </div>
@@ -94,10 +83,10 @@
             <tr>
                 <td>
                     <div class="circleContainer">
-                        <img src="resto.jpg" id="aCategorie">
+                        <img src="pharmacy.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 4
+                                Pharmacie Jules Côté
                             </div>
                         </div>
                     </div>
@@ -107,17 +96,17 @@
                         <img src="tech.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 5
+                                Klavié
                             </div>
                         </div>
                     </div>
                 </td>
                 <td>
                     <div class="circleContainer">
-                        <img src="handcraft.jpg" id="aCategorie">
+                        <img src="clothes2.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 6
+                                Naissance
                             </div>
                         </div>
                     </div>
@@ -130,27 +119,27 @@
                         <img src="clothes.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 7
+                                Naissance
                             </div>
                         </div>
                     </div>
                 </td>
                 <td>
                     <div class="circleContainer">
-                        <img src="coffee.jpg" id="aCategorie">
+                        <img src="shoes.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 8
+                                Chaussures Sem Elle
                             </div>
                         </div>
                     </div>
                 </td>
                 <td>
                     <div class="circleContainer">
-                        <img src="clothes.jpg" id="aCategorie">
+                        <img src="guitar.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 9
+                                Musique Ferland
                             </div>
                         </div>
                     </div>
@@ -159,10 +148,10 @@
             <tr>
                 <td>
                     <div class="circleContainer">
-                        <img src="coffee.jpg" id="aCategorie">
+                        <img src="bookstore.jpg" id="aCategorie">
                         <div class="overlay">
                             <div class="text">
-                                Shop 10
+                                Librairie Renard de Blé
                             </div>
                         </div>
                     </div>
