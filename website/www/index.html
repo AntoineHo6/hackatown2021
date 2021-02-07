@@ -1,12 +1,179 @@
 <!DOCTYPE html>
-<html>
+
 <head>
-    <title>placeholdername</title>
+    <meta charset="UTF-8">
+    <title>Project Website</title> 
+    <link rel="stylesheet" type="text/css" href="Hackatown.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
-<body>
 
-    <h1>Heading</h1>
-    <p>Paragraph.</p>
+<body class="mainBody">
+    <nav class="HeaderBar">
+        
+        <div id="BurgerMenuSidebar">
+            <!--
+            A fake / hidden checkbox is used as click reciever,
+            so you can use the :checked selector on it.
+            -->
+            <input type="checkbox" />
+            
+            <!--
+            Some spans to act as a hamburger.
+            
+            They are acting like a real hamburger,
+            not that McDonalds stuff.
+            -->
+            <span></span>
+            <span></span>
+            <span></span>
+            
+            <!--
+            Too bad the menu has to be inside of the button
+            but hey, it's pure CSS magic.
+            -->
+            <ul id="menu">
+              <a href="#"><li>Page d'accueil</li></a>
+              <a href="#"><li>Categorie</li></a>
+              <a href="#"><li>Categorie</li></a>
+              <a href="#"><li>Categorie</li></a>
+              <a href="#"><li>Categorie</li></a>
+              <a href="#"><li>Categorie</li></a>
+              <a href="#"><li>Categorie</li></a>
+            </ul>
+        </div>
+        <div class="mbtablediv">
+            Page d'accueil
+        </div>
+        <div id="mbloginsignupsdiv">
+            <a href="login.html" class='mbloginbtn'>Login</a>
+        </div>
+        
+    </nav>
 
+    <p><h1 id="welcomeMsg">Bienvenue à la Maison du Lys!</h1></p>
+    <p id="welcomeMsg">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+    <p><h2 id="welcomeMsg">Choisissez une categorie pour explorer nos commerces locaux!</h2></p>
+
+    <div class="listOfCategories">
+        <!-- add table later for more circles + hover effects -->
+        <table>
+            <tr>
+                <td>
+                    <div class="circleContainer">
+                        <img src="food.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 1
+                            </div>
+                        </div>
+                       
+                    </div>
+                </td>
+                <td>
+                    <div class="circleContainer">
+                        <img src="clothes.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 2
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="circleContainer">
+                        <img src="coffee.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 3
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <div class="circleContainer">
+                        <img src="resto.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 4
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="circleContainer"> 
+                        <img src="tech.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 5
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="circleContainer">
+                        <img src="handcraft.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 6
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <div class="circleContainer">
+                        <img src="clothes.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 7
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="circleContainer">
+                        <img src="coffee.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 8
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="circleContainer">
+                        <img src="clothes.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 9
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="circleContainer">
+                        <img src="coffee.jpg" id="aCategorie">
+                        <div class="overlay">
+                            <div class="text">
+                                Shop 10
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    
+        
+    
 </body>
+
 </html>
