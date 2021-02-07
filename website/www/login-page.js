@@ -10,6 +10,9 @@ loginButton.addEventListener("click", (e) => {
     if (username === "user" && password === "web_dev") {
         localStorage.setItem("isLogged", "1");
         window.location.replace("./index.html");
+
+        document.getElementsByClassName("welcome").innerHTML = "Bienvenu.e"+localStorage.getItem(username)+"au Panier du Lys!";
+        
     } else {
         loginErrorMsg.style.opacity = 1;
         setTimeout(function(){ loginErrorMsg.style.opacity = 0; }, 3000);
