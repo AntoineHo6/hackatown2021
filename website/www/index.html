@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>Project Website</title> 
     <link rel="stylesheet" type="text/css" href="Index.css">
-    <link rel="stylesheet" type="text/css" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="front-page-login.js"></script>
+    
 </head>
 
-<body class="mainBody">
+<body class="mainBody" onload=userLogin()>
+    <!-- <script src="front-page-login.js" defer></script> -->
     <nav class="HeaderBar">
         
         <div id="BurgerMenuSidebar">
@@ -21,27 +23,32 @@
             <span></span>
            
             <ul id="menu">
-              <a href="#"><li>Page d'accueil</li></a>
-              <a href="#"><li>Categorie</li></a>
-              <a href="#"><li>Categorie</li></a>
-              <a href="#"><li>Categorie</li></a>
-              <a href="#"><li>Categorie</li></a>
-              <a href="#"><li>Categorie</li></a>
-              <a href="#"><li>Categorie</li></a>
+              <a href="index.html"><li>Page d'accueil</li></a>
+              <a href="#"><li>JÉA</li></a>
+              <a href="#"><li>Multi-Clos</li></a>
+              <a href="#"><li>Atelier de Potterie à Sara</li></a>
+              <a href="#"><li>Pharmacie Jules Côté</li></a>
+              <a href="#"><li>Klavié</li></a>
+              <a href="#"><li>Naissance</li></a>
+              <a href="#"><li>Chaussures Sem Elle</li></a>
+              <a href="#"><li>Musique Ferland</li></a>
+              <a href="#"><li>Librairie Renard de Blé</li></a>
+              
             </ul>
         </div>
         <div class="mbtablediv">
-            Page d'accueil
+            <div>Page d'accueil</div>
         </div>
+        
         <div id="mbloginsignupsdiv">
-            <a href="login.html" class='mbloginbtn'>Login</a>
+            <a href="login.html" class='mbloginbtn' id="btn"></a>
         </div>
         
     </nav>
-
-    <p><h1 id="welcomeMsg">Bienvenue au Panier du Lys!</h1></p>
-    <p id="welcomeMsg">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-    <p><h2 id="welcomeMsg">Choisissez une categorie pour explorer nos commerces locaux!</h2></p>
+    <img src="" id=logo style="width:10%; height:100%;">
+    <p><h1 class="welcome" id="welcomeMsg">Bienvenu.e au Panier du Lys!</h1></p>
+    <p id="welcomeMsg">Le Panier du Lys est une plateforme visant à supporter l'économie locale et à contribuer au development durable!</p>
+    <p><h2 id="welcomeMsg">Choisissez une catégorie pour explorer nos commerces locaux!</h2></p>
 
     <div class="listOfCategories">
         <!-- add table later for more circles + hover effects -->
