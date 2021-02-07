@@ -4,6 +4,7 @@ fetch("http://localhost:8393/products/list").then(function(response) {
   }).then(function(data) {
     console.log("am before boo");
   }).catch(function() {
+      // CODE HERE KHA
     for (let index = 0; index < array.length; index++) {
         createCard(cardsContainer, "sirop d'érable", "./media/dannyBoy.JPEG", "description", "12$");
     }
