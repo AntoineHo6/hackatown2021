@@ -2,8 +2,8 @@ import json
 from datetime import datetime, date
 from flask import request, jsonify
 
-from models import Products, Categories, Shops
-from __init__ import flask_app, db
+from models import Products, Categories, Shops, Category_Relation, Shop_Relation
+from __init__ import flask_app, db, product_graph
 
 
 # lists all the products
@@ -12,7 +12,13 @@ def list_products():
     products = db.query(Products).all()
     result = []
     for product in products:
-        result.append(product._dump())
+        product_dict = product._dump()
+        product_graph.expand(product, depth=1, direction='any')
+        shop_name = product._relations['shop_relation'][0]._object_to.name
+        category_name = product._relations['category_relation'][0]._object_from.name
+        product_dict['shop'] = shop_name
+        product_dict['category'] = category_name
+        result.append(product_dict)
 
     return jsonify({'result':result})
 
@@ -30,6 +36,19 @@ def add_new_product():
     discount = body.get('discount',None)
     new_product = Products(name=name, description=description, imageLocation=imageLocation, price=price, discount=discount)
     db.add(new_product)
+
+    #add relations
+    shop_key = body.get('shop_key',None)
+    if shop_key is not None:
+        shop = db.query(Shops).by_key(shop_key)
+        if shop is not None:
+            db.add(product_graph.relation(new_product, Shop_Relation(), shop))
+    category_key = body.get('category_key',None)
+    if category_key is not None:
+        category = db.query(Categories).by_key(category_key)
+        if category is not None:
+            db.add(product_graph.relation(relation_from=category, relation=Shop_Relation(), relation_to=new_product))
+
     return jsonify({'result':new_product._dump()})
 
 
@@ -41,6 +60,8 @@ def edit_product():
     if key is None:
         return jsonify({'error':'key cannot be null'})
     product = db.query(Products).by_key(key)
+    if product is None:
+        return jsonify({'error':'product not found'})
 
     # TODO this but programmatically if things change
     name = body.get('name',None)
@@ -59,6 +80,24 @@ def edit_product():
     if discount is not None:
         product.discount = discount
     db.update(product)
+
+    #relations
+    category_key = body.get('category_key', None)
+    category = db.query(Categories).by_key(category_key)
+    if category is not None:
+        # find old category relation and delete it
+        old_category_relation = db.query(Category_Relation).filter('_to==@_to',_to=product._id).first()
+        db.delete(old_category_relation)
+        # add new category relation
+        db.add(product_graph.relation(relation_from=category, relation=Category_Relation(), relation_to=product))
+    shop_key = body.get('shop_key', None)
+    shop = db.query(Shops).by_key(shop_key)
+    if shop is not None:
+        # find old assignee relation and delete it
+        old_shop_relation = db.query(Shop_Relation).filter('_from==@_from',_from=product._id).first()
+        db.delete(old_shop_relation)
+        # add new assignee relation
+        db.add(product_graph.relation(relation_from=product, relation=Shop_Relation(), relation_to=shop))
 
     return jsonify({'result':product._dump()})
 

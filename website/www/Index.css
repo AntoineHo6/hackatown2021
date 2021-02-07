@@ -37,14 +37,6 @@ position: relative;
   
 }
 
-.listOfCategories{
-  /* padding-left:100px;
-  padding-right:100px; */
- 
-}
-
-
-
 #aCategorie{
   width: 300px;
   height: 300px;
@@ -56,9 +48,8 @@ position: relative;
 }
 
 .circleContainer{
-  position: relative;
-  width: 100%;
-  
+    position: relative;
+    width: 100%;
 }
 
 #BurgerMenuSidebar
@@ -245,14 +236,38 @@ font-size: 17px;
   color: white;
   font-size: 20px;
   
-  text-align: center;  
+  a.mbloginbtn:hover, a.mbloginbtn:active {
+	background-color: black;
+	color: white;
+	font-size: 17px;
+	/* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+	
+  }
+
+  .overlay{
+    position: absolute; 
+    width: 320px;
+    height: 327px;
+    border-radius: 50%;
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); 
+    color: #f1f1f1; 
+    
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    
+    text-align: center;  
 } 
 
 .circleContainer:hover .overlay{
-  opacity:1;
+    opacity:1;
 }
 
 .text{
-  margin-top:45%;
-  font-family: "Montserrat";
+    margin-top:45%;
+    font-family: "Montserrat";
 }
+

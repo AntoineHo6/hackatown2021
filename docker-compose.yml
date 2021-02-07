@@ -10,7 +10,7 @@ services:
             - ./database/arangodb3:/var/lib/arangodb3
             - ./database/arangodb3-apps:/var/lib/arangodb3-appst
 
-    hackatown-product-api:
+    api:
         build: ./productAPI
         volumes:
             - ./productAPI:/usr/src/app
