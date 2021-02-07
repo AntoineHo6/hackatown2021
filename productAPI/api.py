@@ -2,7 +2,7 @@ import json
 from datetime import datetime, date
 from flask import request, jsonify
 
-from models import Products, Categories
+from models import Products, Categories, Shops
 from __init__ import flask_app, db
 
 
@@ -134,3 +134,76 @@ def delete_category():
     return jsonify({'result': 'success'})
 
 
+#TODO seperate this out into another API
+# lists all the shops
+@flask_app.route('/shops/list',methods=['GET'])
+def list_shops():
+    shops = db.query(Shops).all()
+    result = []
+    for shop in shops:
+        result.append(shop._dump())
+
+    return jsonify({'result':result})
+
+
+# adds a new record to shops collection
+@flask_app.route('/shops/add', methods=['POST'])
+def add_new_shop():
+    body = json.loads(request.data)
+    name = body.get('name',None)
+    if name is None:
+        return jsonify({'error':'name cannot be null'})
+    slogan = body.get('slogan',None)
+    description = body.get('description',None)
+    logoLocation = body.get('logoLocation',None)
+    geolocation = body.get('geolocation',None)
+    foundingDate = body.get('foundingDate',None)
+    new_shop = Shops(name=name, slogan=slogan, description=description, logoLocation=logoLocation, geolocation=geolocation, foundingDate=foundingDate)
+    db.add(new_shop)
+    return jsonify({'result':new_shop._dump()})
+
+
+# edits record in shops collection
+@flask_app.route('/shops/edit',methods=['PUT'])
+def edit_shop():
+    body = json.loads(request.data)
+    key = body.get('_key',None)
+    if key is None:
+        return jsonify({'error':'key cannot be null'})
+    shop = db.query(Shops).by_key(key)
+
+    # TODO this but programmatically if things change
+    name = body.get('name',None)
+    if name is not None:
+        shop.name = name
+    slogan = body.get('slogan',None)
+    if slogan is not None:
+        shop.slogan = slogan
+    description = body.get('description',None)
+    if description is not None:
+        shop.description = description
+    logoLocation = body.get('logoLocation',None)
+    if logoLocation is not None:
+        shop.logoLocation = logoLocation
+    geolocation = body.get('geolocation',None)
+    if geolocation is not None:
+        shop.geolocation = geolocation
+    foundingDate = body.get('foundingDate',None)
+    if foundingDate is not None:
+        shop.foundingDate = foundingDate
+    db.update(shop)
+
+    return jsonify({'result':shop._dump()})
+
+
+# deletes a record in products collection
+@flask_app.route('/shop/remove', methods=['DELETE'])
+def delete_shop():
+    body = json.loads(request.data)
+    key = body.get('_key', None)
+    if key is None:
+        return jsonify({'error': 'key cannot be null'})
+
+    shop = db.query(Shops).by_key(key)
+    db.delete(shop)
+    return jsonify({'result': 'success'})

@@ -25,3 +25,19 @@ class Categories(Collection):
 
     def __str__(self):
         return "<Subject({})>".format(self.name)
+
+
+#TODO seperate this into another api
+class Shops(Collection):
+    __collection__ = 'shops'
+
+    _key = String(required=True, allow_none=False)
+    name = String(required=True, allow_none=False)
+    slogan = String()
+    description = String()
+    logoLocation = String()
+    geolocation = Field()       #what kind of datatype is geolocal data?
+    foundingDate = Date()
+
+    def __str__(self):
+        return "<Subject({})>".format(self.name)
