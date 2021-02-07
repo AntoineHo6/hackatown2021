@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+    hackatown-database:
+        image: arangodb
+        environment:
+            - ARANGO_ROOT_PASSWORD=securepassword
+        ports:
+            - 8529:8529
+        volumes:
+            - ./database/arangodb3:/var/lib/arangodb3
+            - ./database/arangodb3-apps:/var/lib/arangodb3-appst
+
+    hackatown-product-api:
+        build: ./productAPI
+        volumes:
+            - ./productAPI:/usr/src/app
+        ports:
+            - 8393:8393
+        depends_on:
+            - hackatown-database
+
+    hackatown-webserver:
+        image: nginx
+        volumes:
+            - ./website/www:/var/www
+            - ./website/conf.d:/etc/nginx/conf.d
+        ports:
+            - 8080:80
+#       depends_on:
+#           - hackatown-product-api
